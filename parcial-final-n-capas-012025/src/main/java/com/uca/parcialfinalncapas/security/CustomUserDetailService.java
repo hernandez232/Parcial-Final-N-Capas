@@ -26,9 +26,9 @@ public class CustomUserDetailService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException(email));
 
         // Maps the user's roles to granted authorities
-        Set<GrantedAuthority> grantedAuthorities = user.getRoles()
+        Set<GrantedAuthority> grantedAuthorities = user.getAuthorities()
                 .stream()
-                .map(role -> new SimpleGrantedAuthority(role.getName())) // Converts each role to a granted authority
+                .map(role -> new SimpleGrantedAuthority(role.getAuthority())) // Converts each role to a granted authority
                 .collect(Collectors.toSet());
 
         // Returns a Spring Security User object with the user's username, password, and authorities
