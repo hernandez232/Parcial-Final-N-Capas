@@ -30,11 +30,10 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests((authorizeRequests) -> {
                     authorizeRequests
                             //.anyRequest().authenticated();
-                            /*.requestMatchers(HttpMethod.GET, "/api/**").hasRole("ADMIN")
-                            .requestMatchers(HttpMethod.POST, "/api/**").hasRole("ADMIN")
-                            .requestMatchers(HttpMethod.DELETE, "/api/**").hasRole("ADMIN")
-                            .requestMatchers(HttpMethod.PUT, "/api/**").hasRole("ADMIN")
-                            .requestMatchers(HttpMethod.GET, "/api/employee/**").hasRole("USER")*/
+                            /*.requestMatchers(HttpMethod.GET, "/api/**").hasRole("USER")
+                            .requestMatchers(HttpMethod.POST, "/api/**").hasRole("TECH")
+                            .requestMatchers(HttpMethod.DELETE, "/api/**").hasRole("TECH)
+                            .requestMatchers(HttpMethod.PUT, "/api/**").hasRole("TECH")*/
                             .requestMatchers("/api/auth/**").permitAll() //Permits urls to be public, no authorization needed
                             .anyRequest().authenticated();
                 }).httpBasic(Customizer.withDefaults());
