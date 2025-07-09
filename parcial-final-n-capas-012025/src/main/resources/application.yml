@@ -1,8 +1,13 @@
 spring:
+  application:
+    name: parcialFinalNCapas012025
+
+spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/supportdb
-    username: postgres
-    password: 12345
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/supportdb}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:12345}
+
   jpa:
     hibernate:
       ddl-auto: update
