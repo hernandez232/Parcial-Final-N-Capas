@@ -7,3 +7,7 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+  app:
+    jwt-secret: dd1c0c25edf2320965c59832612f58a9ab84f99ce66f8c3ae559fef5bc85fb58
+    jwt-expiration-time: 86400000 # 100 days
